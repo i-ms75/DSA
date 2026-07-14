@@ -3,7 +3,11 @@ public class Recusrion {
         // backTrackingRecusrion(5,5);
         // sum(5,0);
         // System.out.println("Sum is: "+sumWithFunction(5));
-        System.out.println("Factorial is: "+factorial(5));
+        // System.out.println("Factorial is: "+factorial(5));
+
+        // int arr[]={3,2,5,9,4,7,8};
+        int arr[]={1,2,3,4,5,6,7,8,9};
+        arrayReversal(arr,0,arr.length-1);
 
     }
 // to print 1 to N
@@ -48,5 +52,26 @@ public class Recusrion {
         if(n<1)
             return 1;
         return n*factorial(n-1);
+    }
+
+    // reversing an array
+    public static void arrayReversal(int array[], int i,int j)
+    {
+        // 3,2,5,9
+        
+        if (i==j || j<i) {
+            for (int element:array)
+                {
+                    System.out.print(element);
+                }
+            return;
+        }
+        int temp=0;
+        temp=array[i];
+        array[i]=array[j];
+        array[j]=temp;
+        arrayReversal(array, i+1, j-1);
+        
+
     }
 }
