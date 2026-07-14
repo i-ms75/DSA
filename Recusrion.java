@@ -6,8 +6,10 @@ public class Recusrion {
         // System.out.println("Factorial is: "+factorial(5));
 
         // int arr[]={3,2,5,9,4,7,8};
-        int arr[]={1,2,3,4,5,6,7,8,9};
-        arrayReversal(arr,0,arr.length-1);
+        // int arr[]={1,2,3,4,5,6,7,8};
+        // arrayReversal(arr,0,arr.length-1);
+        String pal="1221";
+        System.out.print(paliindrome(pal.toCharArray(), 0));
 
     }
 // to print 1 to N
@@ -59,7 +61,7 @@ public class Recusrion {
     {
         // 3,2,5,9
         
-        if (i==j || j<i) {
+        if ( j<i) {
             for (int element:array)
                 {
                     System.out.print(element);
@@ -72,6 +74,18 @@ public class Recusrion {
         array[j]=temp;
         arrayReversal(array, i+1, j-1);
         
+
+    }
+
+    // Palidrome string
+    public static boolean paliindrome( char s[],int i)
+    {
+        int length=s.length-1;
+        if(i>length/2)
+            return true;
+        if(s[i]!=s[length-i])
+            return false;
+       return paliindrome(s, i+1);
 
     }
 }
