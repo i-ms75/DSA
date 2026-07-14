@@ -8,8 +8,9 @@ public class Recusrion {
         // int arr[]={3,2,5,9,4,7,8};
         // int arr[]={1,2,3,4,5,6,7,8};
         // arrayReversal(arr,0,arr.length-1);
-        String pal="1221";
-        System.out.print(paliindrome(pal.toCharArray(), 0));
+        // String pal="1221";
+        // System.out.print(paliindrome(pal.toCharArray(), 0));
+        System.out.println(fibonacci(10));
 
     }
 // to print 1 to N
@@ -87,5 +88,14 @@ public class Recusrion {
             return false;
        return paliindrome(s, i+1);
 
+    }
+
+    //Fibonacii 
+    public static int fibonacci(int n)
+    {
+        if (n<=1) {
+            return n;
+        }
+        return fibonacci(n-1)+fibonacci(n-2);
     }
 }
