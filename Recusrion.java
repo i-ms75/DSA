@@ -1,8 +1,8 @@
 public class Recusrion {
     public static void main(String[] args) {
         // backTrackingRecusrion(5,5);
-        sum(5,0);
-        
+        // sum(5,0);
+        System.out.println("Sum is: "+sumWithFunction(5));
     }
 // to print 1 to N
     public static void backTrackingRecusrion(int i,int n){
@@ -32,5 +32,11 @@ public class Recusrion {
 
     }
 
-   
+    // Sum with functional approach
+    public static int sumWithFunction(int i)
+    {
+        if(i<1)
+            return i;
+        return i+sumWithFunction(i-1);
+    }
 }
