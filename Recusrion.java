@@ -2,7 +2,9 @@ public class Recusrion {
     public static void main(String[] args) {
         // backTrackingRecusrion(5,5);
         // sum(5,0);
-        System.out.println("Sum is: "+sumWithFunction(5));
+        // System.out.println("Sum is: "+sumWithFunction(5));
+        System.out.println("Factorial is: "+factorial(5));
+
     }
 // to print 1 to N
     public static void backTrackingRecusrion(int i,int n){
@@ -38,5 +40,13 @@ public class Recusrion {
         if(i<1)
             return i;
         return i+sumWithFunction(i-1);
+    }
+
+    // Factorial
+    public static int factorial(int n)
+    {
+        if(n<1)
+            return 1;
+        return n*factorial(n-1);
     }
 }
