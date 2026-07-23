@@ -2,7 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Recusrion {
-   static  List<Integer> arrIntegers=List.of(3,1,2);
+//    static  List<Integer> arrIntegers=List.of(3,1,2);
+   static  List<Integer> arrIntegers=List.of(2,1,1);
    static List<Integer> temp = new ArrayList<>();
     public static void main(String[] args) {
         // backTrackingRecusrion(5,5);
@@ -16,7 +17,8 @@ public class Recusrion {
         // String pal="1221";
         // System.out.print(paliindrome(pal.toCharArray(), 0));
         // System.out.println(fibonacci(10));
-        subsqRecurssion(0, arrIntegers);
+        // subsqRecurssion(0, arrIntegers);
+        subsqRecurssionWithSum(0, arrIntegers,0);
 
     }
 // to print 1 to N
@@ -120,5 +122,26 @@ public class Recusrion {
         subsqRecurssion(i+1, temp);
         temp.remove(temp.size() - 1);
         subsqRecurssion(i+1, temp);
+    }
+
+     //Subsequent recurssion whose sum is N
+    public static void subsqRecurssionWithSum(int i,List<Integer> arr,Integer sum)
+    {
+        if (i>=arrIntegers.size()) {
+            if(sum==2){
+            temp.forEach(element->
+                System.out.print(element)
+            );
+            System.out.println();
+        }
+            return;
+            
+        }
+        temp.add(arrIntegers.get(i));
+        sum=sum+arrIntegers.get(i);
+        subsqRecurssionWithSum(i+1, temp,sum);
+        temp.remove(temp.size() - 1);
+        sum=sum-arrIntegers.get(i);
+        subsqRecurssionWithSum(i+1, temp,sum);
     }
 }
