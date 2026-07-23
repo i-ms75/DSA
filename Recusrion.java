@@ -1,4 +1,9 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Recusrion {
+   static  List<Integer> arrIntegers=List.of(3,1,2);
+   static List<Integer> temp = new ArrayList<>();
     public static void main(String[] args) {
         // backTrackingRecusrion(5,5);
         // sum(5,0);
@@ -10,7 +15,8 @@ public class Recusrion {
         // arrayReversal(arr,0,arr.length-1);
         // String pal="1221";
         // System.out.print(paliindrome(pal.toCharArray(), 0));
-        System.out.println(fibonacci(10));
+        // System.out.println(fibonacci(10));
+        subsqRecurssion(0, arrIntegers);
 
     }
 // to print 1 to N
@@ -97,5 +103,22 @@ public class Recusrion {
             return n;
         }
         return fibonacci(n-1)+fibonacci(n-2);
+    }
+
+    //Subsequent recurssion
+    public static void subsqRecurssion(int i,List<Integer> arr)
+    {
+        if (i>=arrIntegers.size()) {
+            temp.forEach(element->
+                System.out.print(element)
+            );
+            System.out.println();
+            return;
+            
+        }
+        temp.add(arrIntegers.get(i));
+        subsqRecurssion(i+1, temp);
+        temp.remove(temp.size() - 1);
+        subsqRecurssion(i+1, temp);
     }
 }
