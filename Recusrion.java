@@ -19,6 +19,7 @@ public class Recusrion {
         // System.out.println(fibonacci(10));
         // subsqRecurssion(0, arrIntegers);
         subsqRecurssionWithSum(0, arrIntegers,0);
+        subsqRecurssionWithOneSum(0, arrIntegers,0);
 
     }
 // to print 1 to N
@@ -143,5 +144,33 @@ public class Recusrion {
         temp.remove(temp.size() - 1);
         sum=sum-arrIntegers.get(i);
         subsqRecurssionWithSum(i+1, temp,sum);
+    }
+
+          //one Subsequent recurssion whose sum is N
+    public static boolean subsqRecurssionWithOneSum(int i,List<Integer> arr,Integer sum)
+    {
+        if (i>=arrIntegers.size()) {
+            if(sum==2){
+            temp.forEach(element->
+                System.out.print(element)
+            );
+            System.out.println();
+            return true;
+        }
+            return false;
+            
+        }
+        temp.add(arrIntegers.get(i));
+        sum=sum+arrIntegers.get(i);
+        if(subsqRecurssionWithOneSum(i+1, temp,sum)==true){
+            return true;
+        }
+        else{
+        temp.remove(temp.size() - 1);
+        sum=sum-arrIntegers.get(i);
+        if(subsqRecurssionWithOneSum(i+1, temp,sum)==true)
+            return true;
+    }
+        return false;
     }
 }
