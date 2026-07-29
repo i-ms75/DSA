@@ -7,7 +7,6 @@ public class MergeSort {
         for (int element : array) {
             System.out.print(element+",");
         }
-        // System.out.println();
         
     }
     
