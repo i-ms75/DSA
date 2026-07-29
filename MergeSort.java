@@ -25,6 +25,7 @@ public class MergeSort {
 
     }
 
+    //compare, sort and then merge the array
     static void merge(int[] array, int low, int mid, int high) {
         ArrayList<Integer> temp=new ArrayList<>();
 
